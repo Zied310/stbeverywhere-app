@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <swiper [config]="config">
+    <ng-template swiperSlide>
+      <ion-img src="../../assets/img/bg.jpg"></ion-img>
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <h1 class="slide2-title">Une panoplie de services innovants</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6" *ngFor="let card of cards" (click)="showCard(card)">
+            <ion-img [src]="card.image"></ion-img><br>
+            {{ card.title }}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ng-template>
+    <ng-template swiperSlide>Slide 3</ng-template>
+  </swiper>
+
+  <ion-card *ngIf="selectedCard" class="center-card">
+    <ion-card-header style="--background: purple;">
+      <ion-toolbar style="--background: purple;">
+        {{ selectedCard.title }} Card
+        <ion-buttons slot="end">
+          <ion-button (click)="hideCard()">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-card-header>
+      <ion-card-content>
+        {{ selectedCard.content }}
+      </ion-card-content>
+  </ion-card>
+</ion-content>
