@@ -31,4 +31,10 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
+ion-content {
+    --background: url('./assets/img/app-bg3.jpg') no-repeat center center fixed;
+    --background-size: cover;
+    opacity: 0.9; /* adjust as needed */ 
+  }
+
 

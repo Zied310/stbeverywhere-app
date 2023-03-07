@@ -11,24 +11,81 @@
       <ion-grid>
         <ion-row>
           <ion-col size="12">
-            <h1 class="slide2-title">Une panoplie de services innovants</h1>
+            <h1 class="slide-title">Une panoplie de services innovants</h1>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col size="6" *ngFor="let card of cards" (click)="showCard(card)">
-            <ion-img [src]="card.image"></ion-img><br>
-            {{ card.title }}
+            <ion-img class="card-img-logo" [src]="card.image" ></ion-img><br>
+            <div class="card-title-container">
+              {{ card.title }}
+            </div>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide >
+      <ion-grid class="slide3-grid">
+        <ion-row class="slide3-row">
+          <ion-col size="12"><h1 class="slide-title">Gestion des cartes</h1></ion-col>
+        </ion-row>
+        <ion-row class="slide3-row">
+          <ion-col size="1" class="logo"><ion-img src ="../../assets/img/payments.svg"></ion-img></ion-col>
+          <ion-col size="10" class="info">Modifier vos plafonds</ion-col>
+        </ion-row>
+        <ion-row class="slide3-row">
+          <ion-col size="1" class="logo"><ion-img src ="../../assets/img/security.svg"></ion-img></ion-col>
+          <ion-col size="10" class="info">Bloquer/Débloquer vos cartes</ion-col>
+        </ion-row>
+        <ion-row class="slide3-row">
+          <ion-col size="1" class="logo"><ion-img src ="../../assets/img/statistics.svg"></ion-img></ion-col>
+          <ion-col size="10" class="info">Suivre vos dépenses</ion-col>
+        </ion-row>
+        <ion-row class="slide3-row">
+          <ion-col size="1" class="logo"><ion-img src ="../../assets/img/support.svg"></ion-img></ion-col>
+          <ion-col size="10" class="info">Recharger vos cartes prépayées </ion-col>
+        </ion-row>
+          <ion-row class="slide3-row-img" >
+            <ion-col size="12"><ion-img src="../../assets/img/stb-robot-hand.png"></ion-img></ion-col>
+          </ion-row>
+      </ion-grid>
+
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <ion-grid class="slide3-grid">
+        <ion-row class="slide3-row">
+          <ion-col size="12"><h1 class="slide-title">Gestion des cartes</h1></ion-col>
+        </ion-row>
+        <ion-row class="slide3-row">
+          <ion-col size="1" class="circle-check"><ion-img src ="../../assets/img/circle-check-regular.svg"></ion-img></ion-col>
+          <ion-col size="10" class="info">Modifier vos plafonds</ion-col>
+        </ion-row>
+        <ion-row class="slide3-row">
+          <ion-col size="1" class="circle-check"><ion-img src ="../../assets/img/circle-check-regular.svg"></ion-img></ion-col>
+          <ion-col size="10" class="info">Bloquer/Débloquer vos cartes</ion-col>
+        </ion-row>
+        <ion-row class="slide3-row">
+          <ion-col size="1" class="circle-check"><ion-img src ="../../assets/img/circle-check-regular.svg"></ion-img></ion-col>
+          <ion-col size="10" class="info">Suivre vos dépenses</ion-col>
+        </ion-row>
+        <ion-row class="slide4-row-img">
+          <ion-col size="12">
+            <ion-img src="../../assets/img/screen01.png" class="slide4-bot-img"></ion-img>
+            <ion-img src="../../assets/img/screen02.png" class="slide4-top-img"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ng-template>
+
+
   </swiper>
 
   <ion-card *ngIf="selectedCard" class="center-card">
-    <ion-card-header style="--background: purple;">
-      <ion-toolbar style="--background: purple;">
-        {{ selectedCard.title }} Card
+    <ion-card-header style="--background: #003D86;">
+      <ion-toolbar style="--background: #003D86;">
+        {{ selectedCard.title }}
         <ion-buttons slot="end">
           <ion-button (click)="hideCard()">
             <ion-icon name="close"></ion-icon>
@@ -40,4 +97,8 @@
         {{ selectedCard.content }}
       </ion-card-content>
   </ion-card>
+
+
+  <button  class="next-button" (click)="NextSlide()">Next</button>
+  
 </ion-content>

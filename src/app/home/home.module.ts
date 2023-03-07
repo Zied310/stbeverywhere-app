@@ -8,6 +8,9 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { SwiperModule } from 'swiper/angular';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
+
 
 
 @NgModule({
@@ -17,6 +20,7 @@ import { SwiperModule } from 'swiper/angular';
     IonicModule,
     HomePageRoutingModule,
     SwiperModule,
+    FontAwesomeModule,
   ],
   declarations: [HomePage],
 })

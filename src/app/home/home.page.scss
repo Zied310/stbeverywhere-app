@@ -26,12 +26,24 @@
   text-decoration: none;
 }
 
-ion-content {
-  --background: url('../../assets/img/app-bg3.jpg') no-repeat center center fixed;
-  --background-size: cover;
-  opacity: 0.9; /* adjust as needed */
-  
+
+.swiper-pagination-bullet {
+  width: 13px;
+  height: 13px;
+  background-color: white !important; /* set the default color to white */
+  opacity: 0.5;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: royalblue !important; /* set the active color to blue */
+  opacity: 1;
+}
+
+.card-img-logo{
+  height: 150px;
+  object-fit: contain;
+}
+
 
 .center-card {
   position: absolute;
@@ -44,11 +56,13 @@ ion-content {
   height: 95%;
   z-index: 100;
   background-color: #003D86;
+  white-space: pre-line;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: right;
   padding: 1px;
+  overflow-y: scroll;
 }
 
 .center-card ion-card-header {
@@ -56,7 +70,93 @@ ion-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
+
+
+.next-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+//slide 2
+
+
+.slide-title{
+  margin-bottom: 20px;
+}
+
+.slide3-row{
+  margin-top:20px ;
+  margin-left: 10px;
+}
+.info{
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: left;
+  margin-left: 30px;
+}
+
+.logo{
+  background-color: aliceblue;
+  margin-top: auto;
+  border-radius: 10px;
+  margin-bottom: auto;
+  display:flex;
+  justify-content: center;
+}
+
+
+.slide3-row-img{
+  margin-top: 40px;
+}
+
+
+//slide 4 
+
+
+.slide4-row-img{
+  position: relative;
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+.slide4-bot-img{
+  position: absolute;
+  z-index: 2;
+
+
+}
+
+.slide4-top-img{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+}
+
+
+
+
+.circle-check{
+  background-color: aliceblue;
+  margin-top: auto;
+  border-radius: 100%;
+  margin-bottom: auto;
+  display:flex;
+  justify-content: center;
+}
+
+
+
+
 
 
 
