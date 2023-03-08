@@ -8,7 +8,13 @@ import { SwiperComponent} from 'swiper/angular';
 import { SwiperOptions } from 'swiper';
 import SwiperCore, { Pagination } from 'swiper';
 
+import Swiper from 'swiper';
+
+
+
 SwiperCore.use([Pagination]);
+
+
 
 @Component({
   selector: 'app-home',
@@ -16,11 +22,17 @@ SwiperCore.use([Pagination]);
   styleUrls: ['home.page.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomePage implements AfterContentChecked {
+
+
+
+export class HomePage implements AfterContentChecked{
   @ViewChild('swiper') swiper!: SwiperComponent;
-  @ViewChild(SwiperComponent) swiperComponent?: SwiperComponent;
+  @ViewChild(SwiperComponent) swiperComponent!: SwiperComponent;
 
   
+  
+
+
 
   config: SwiperOptions = {
     observer: true,
@@ -28,25 +40,28 @@ export class HomePage implements AfterContentChecked {
     parallax:true,
     pagination: true,
   };
-  constructor() {}
+  
  
+  
 
   ngAfterContentChecked() {
     if (this.swiper) {
       this.swiper.updateSwiper({});
+      
     }
+    
   }
-
-
+  
   NextSlide() {
-    this.swiper.swiperRef.slideNext(500);
+      this.swiperComponent.swiperRef.slideNext(500);
   }
-
   PreviousSlide() {
-    this.swiper.swiperRef.slidePrev(500);
+    this.swiperComponent.swiperRef.slidePrev(500);
+}
+constructor() {}
 
-  }
 
+ 
   public cards = [
     {
       image: '../../assets/img/digicarte.png',

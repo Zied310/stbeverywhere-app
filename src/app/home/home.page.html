@@ -55,19 +55,19 @@
     <ng-template swiperSlide>
       <ion-grid class="slide3-grid">
         <ion-row class="slide3-row">
-          <ion-col size="12"><h1 class="slide-title">Gestion des cartes</h1></ion-col>
+          <ion-col size="12"><h1 class="slide-title">Suivi des opérations de transferts internationaux</h1></ion-col>
         </ion-row>
         <ion-row class="slide3-row">
           <ion-col size="1" class="circle-check"><ion-img src ="../../assets/img/circle-check-regular.svg"></ion-img></ion-col>
-          <ion-col size="10" class="info">Modifier vos plafonds</ion-col>
+          <ion-col size="10" class="info">Opérations de transferts Emis</ion-col>
         </ion-row>
         <ion-row class="slide3-row">
           <ion-col size="1" class="circle-check"><ion-img src ="../../assets/img/circle-check-regular.svg"></ion-img></ion-col>
-          <ion-col size="10" class="info">Bloquer/Débloquer vos cartes</ion-col>
+          <ion-col size="10" class="info">Opérations de transferts Reçus</ion-col>
         </ion-row>
         <ion-row class="slide3-row">
           <ion-col size="1" class="circle-check"><ion-img src ="../../assets/img/circle-check-regular.svg"></ion-img></ion-col>
-          <ion-col size="10" class="info">Suivre vos dépenses</ion-col>
+          <ion-col size="10" class="info">Opérations de Scolarité</ion-col>
         </ion-row>
         <ion-row class="slide4-row-img">
           <ion-col size="12">
@@ -76,8 +76,31 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+    </ng-template>
+
+
+    <ng-template swiperSlide>
+      <ion-grid class=""slide3-grid>
+      <ion-row class="slide3-row">
+        <ion-col size="12"><h1 class="slide-title">Tracking des opérations à l’international en temps réel</h1></ion-col>
+      </ion-row>
+      <ion-row class="slide3-row">
+        <ion-col size="12"><ion-img src="../../assets/img/screen03.png" class="slide4-bot-img"></ion-img></ion-col>
+        <ion-col size="12"><ion-img src="../../assets/img/screen04.png" class="slide4-top-img"></ion-img></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <ion-grid>
+        <ion-row>
+          
+        </ion-row>
+      </ion-grid>
       
     </ng-template>
+
 
 
   </swiper>
@@ -98,7 +121,18 @@
       </ion-card-content>
   </ion-card>
 
+  <div class="button-container">
+    <button  class="previous-button" expand="full" size="large" (click)="PreviousSlide()">Previous</button>
+    <button  class="next-button" expand="full" size="large"  (click)="NextSlide()">Next</button>
+  </div>
 
-  <button  class="next-button" (click)="NextSlide()">Next</button>
+
+  
+  
   
 </ion-content>
+
+
+<ion-footer>
+ 
+</ion-footer>
