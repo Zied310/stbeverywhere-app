@@ -6,13 +6,14 @@ import {
 } from '@angular/core';
 import { SwiperComponent} from 'swiper/angular';
 import { SwiperOptions } from 'swiper';
-import SwiperCore, { Pagination } from 'swiper';
+import SwiperCore, {Virtual, Pagination } from 'swiper';
 
 import Swiper from 'swiper';
 
 
 
 SwiperCore.use([Pagination]);
+SwiperCore.use([Virtual]);
 
 
 
@@ -26,12 +27,14 @@ SwiperCore.use([Pagination]);
 
 
 export class HomePage implements AfterContentChecked{
-  @ViewChild('swiper') swiper!: SwiperComponent;
+
   @ViewChild(SwiperComponent) swiperComponent!: SwiperComponent;
 
   
-  
 
+
+  activeIndex: number = 0;
+  isEnd = false;
 
 
   config: SwiperOptions = {
@@ -45,12 +48,31 @@ export class HomePage implements AfterContentChecked{
   
 
   ngAfterContentChecked() {
-    if (this.swiper) {
-      this.swiper.updateSwiper({});
+    if (this.swiperComponent) {
+      this.swiperComponent.updateSwiper({});
       
     }
     
   }
+
+
+
+
+  ngAfterViewInit() {
+
+    // Listen for the slideChange event of the Swiper component
+    this.swiperComponent.swiperRef.on('slideChange', () => {
+      // Update the active index
+      console.log(this.swiperComponent.swiperRef.isEnd, " slide");
+      this.isEnd = this.swiperComponent.swiperRef.isEnd;
+      this.activeIndex = this.swiperComponent.swiperRef.realIndex;
+      console.log(this.swiperComponent.swiperRef.realIndex);
+    });
+    
+  }
+
+
+
   
   NextSlide() {
       this.swiperComponent.swiperRef.slideNext(500);
@@ -59,6 +81,8 @@ export class HomePage implements AfterContentChecked{
     this.swiperComponent.swiperRef.slidePrev(500);
 }
 constructor() {}
+
+
 
 
  

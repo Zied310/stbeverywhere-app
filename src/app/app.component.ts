@@ -12,7 +12,11 @@ export class AppComponent {
 export class SwiperComponent {
 
   swiperOptions = {
-    pagination: { el: '.swiper-pagination', clickable: true },
+    pagination: { el: '.swiper-pagination', 
+    clickable: true,
+    renderBullet: function (index :number, className: string) {
+      return null;
+    } },
   };
 
 }
